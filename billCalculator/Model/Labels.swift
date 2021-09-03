@@ -7,8 +7,7 @@
 
 import UIKit
 
-struct Labels {
-    
+struct Labels {    
     let textLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -35,6 +34,4 @@ struct Labels {
         textLabel.text = text
         result.text = text
     }
-    
-    
 }

@@ -26,20 +26,20 @@ struct CalculateLogic {
         sender.setTitleColor(.white, for: .selected)
     }
     
-   mutating func getTipValue(_ sender: UIButton){
+    mutating func getTipValue(_ sender: UIButton){
         guard let tipValue = sender.currentTitle?.dropLast() else { return }
         guard let tipValueAsNumber = Double(tipValue) else { return }
         tip = tipValueAsNumber / 100
     }
     
-   mutating func stepperValue(_ sender: UIStepper, _ label: UILabel) {
-       let splitValue = String(format: "%.0F", sender.value)
+    mutating func getStepperValue(_ sender: UIStepper, _ label: UILabel) {
+        let splitValue = String(format: "%.0F", sender.value)
         label.text = splitValue
         guard let splitNumber = Int(splitValue) else { return }
         numberOfPeople = splitNumber
     }
     
-    mutating func calculateResult(billFromTF: String){
+    mutating func getBillValue(billFromTF: String){
         guard let billNumber = Double(billFromTF) else { return }
         bill = billNumber
         result = (bill - (bill * tip)) / Double(numberOfPeople)
@@ -52,7 +52,7 @@ struct CalculateLogic {
     func getTip() -> Int {
         guard let tip = billPerPerson?.tip else {return 123}
         let tipAsInt = Int(tip*100)
-       return tipAsInt
+        return tipAsInt
     }
     
     func getNumberOfPeople() -> Int{

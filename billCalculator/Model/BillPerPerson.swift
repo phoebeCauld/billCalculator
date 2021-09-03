@@ -8,10 +8,7 @@
 import Foundation
 
 struct BillPerPerson {
-    
     var finalbill: String
     var numberOfPeople: Int
     var tip: Double
-    
-    
 }

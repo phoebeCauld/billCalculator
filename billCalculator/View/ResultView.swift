@@ -12,9 +12,7 @@ class ResultView: UIView {
     let topResultLabel = Labels(text: "Total per person")
     let resultLabel = Labels(text: "100")
     let resultTextLabel = Labels(text: "some text")
-    
     let recalculateButton = Buttons(text: "Recalculate")
-    
     
     func setView(_ view: UIView){
         topView.backgroundColor = Colors.backgroundColor
@@ -45,7 +43,7 @@ class ResultView: UIView {
                                                             multiplier: ResultViewConstants.labelsWidth),
             topResultLabel.textLabel.heightAnchor.constraint(equalTo: topView.heightAnchor,
                                                              multiplier: ResultViewConstants.labelsHeight),
-
+            
             topView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             topView.topAnchor.constraint(equalTo: view.topAnchor),
             topView.widthAnchor.constraint(equalTo: view.widthAnchor),
@@ -74,5 +72,5 @@ enum ResultViewConstants {
     static let topViewHeight: CGFloat = 0.4
     static let resultLabelWidth: CGFloat = 0.6
     static let resultLabelHeight: CGFloat = 0.3
-
+    
 }

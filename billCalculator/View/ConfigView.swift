@@ -12,8 +12,11 @@ class ConfigView: UIView {
     let topLabel = Labels(text: "Enter bill total")
     let middleLabel = Labels(text: "Select tip")
     let bottomLabel = Labels(text: "Choose split")
-    var splitNumbersLabel = Labels(text: "0")
-
+    let splitNumbersLabel = Labels(text: "0")
+    let noTipButton = Buttons(text: "0%")
+    let tenTipButton = Buttons(text: "10%")
+    let twentyTipButton = Buttons(text: "20%")
+    let calculateButton = Buttons(text: "Calculate")
     let billTextField: UITextField = {
         let billTF = UITextField()
         billTF.textAlignment = .center
@@ -32,17 +35,10 @@ class ConfigView: UIView {
         return stepper
     }()
     
-    
-    let noTipButton = Buttons(text: "0%")
-    let tenTipButton = Buttons(text: "10%")
-    let twentyTipButton = Buttons(text: "20%")
-    let calculateButton = Buttons(text: "Calculate")
-    
     func setView(_ view: UIView){
         topView.backgroundColor = .white
         addSubview(view)
         setConstraints(view)
-       
     }
     
     override func addSubview(_ view: UIView) {
@@ -80,7 +76,7 @@ class ConfigView: UIView {
             middleLabel.textLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor,
                                                          multiplier: Constants.labelsWidth),
             middleLabel.textLabel.heightAnchor.constraint(equalTo: topLabel.textLabel.heightAnchor),
-
+            
             tipButtonsStackView.topAnchor.constraint(equalTo: middleLabel.textLabel.bottomAnchor),
             tipButtonsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             tipButtonsStackView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor,
@@ -104,10 +100,8 @@ class ConfigView: UIView {
             calculateButton.calcButton.heightAnchor.constraint(equalTo: view.heightAnchor,
                                                                multiplier: Constants.calcButtonHeight)
         ])
-        
-        
     }
-
+    
     func tipButtonsStackView(_ view:UIView) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: [noTipButton.tipButton,tenTipButton.tipButton, twentyTipButton.tipButton])
         view.addSubview(stackView)
@@ -121,7 +115,7 @@ class ConfigView: UIView {
     
     func splitStackView(_ view: UIView) -> UIStackView {
         splitNumbersLabel.textLabel.textAlignment = .center
-
+        
         let stackView = UIStackView(arrangedSubviews: [splitNumbersLabel.textLabel,splitStepper])
         view.addSubview(stackView)
         stackView.axis = .horizontal

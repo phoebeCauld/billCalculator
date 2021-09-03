@@ -10,7 +10,7 @@ import UIKit
 struct Buttons {
     
     let tipButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.titleLabel?.font = UIFont.systemFont(ofSize: FontSizes.tipButtonSize)
         button.backgroundColor = .clear
         button.setTitleColor(Colors.greenColor, for: .normal)
@@ -33,5 +33,4 @@ struct Buttons {
         tipButton.setTitle(text, for: .normal)
         calcButton.setTitle(text, for: .normal)
     }
-
 }
