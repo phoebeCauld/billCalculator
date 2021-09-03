@@ -32,6 +32,4 @@ class ResultViewController: UIViewController {
     @objc func recalculateButtonTapped(_ sender: UIButton){
         self.dismiss(animated: true, completion: nil)
     }
-    
-
 }

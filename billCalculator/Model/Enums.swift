@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 enum FontSizes {
     static let textLabelsSize: CGFloat = 25
     static let textFieldSize: CGFloat = 30
